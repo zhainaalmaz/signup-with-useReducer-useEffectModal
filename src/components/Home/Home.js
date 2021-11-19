@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import classes from './Home.module.css';
 import Card from '../UI/Card/Card';
+import ModalOverlay from '../UI/Modal/Modal';
 
 const Home = (props) => {
-  // const photo = image.map((item, index) => {
-  //   return <img src={item.photo} />;
-  // });
-
-  console.log(props.DATA);
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <>
       <Card>
         <div className={classes.container}>
           <div className={classes.header}>
-            <h2>Welcome to our FREE Psychological Aid Fund</h2>
+            <h2> FREE Psychological Aid Fund</h2>
             <button onClick={props.onLogout}>Logout</button>
           </div>
 
@@ -31,8 +28,16 @@ const Home = (props) => {
                     <li>{user.address.city}</li>
                     <li>{user.address.zipcode}</li>
                     <li>{user.website}</li>
-                    <li>📞 {user.phone}</li>
+                    <li
+                      style={{ color: 'blue', cursor: 'pointer' }}
+                      onClick={() => {
+                        setOpenModal(true);
+                      }}
+                    >
+                      📞 {user.phone}
+                    </li>
                   </div>
+                  {openModal && <ModalOverlay closeModal={setOpenModal} />}
                 </ul>
               );
             })}
