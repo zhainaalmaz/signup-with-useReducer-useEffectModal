@@ -1,0 +1,77 @@
+body {
+  background: url(https://images.unsplash.com/photo-1546387903-6d82d96ccca6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1742&q=80);
+}
+
+.login {
+  margin: 100px auto;
+  width: 600px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  height: 600px;
+  display: grid;
+}
+
+.form {
+  margin-top: 50%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.control {
+  margin-bottom: 0.5rem;
+  width: 80%;
+}
+
+.control label {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+  color: rgb(26, 42, 77);
+}
+
+.control_input {
+  display: block;
+  padding-left: 10px;
+  outline: none;
+  border-radius: 2px;
+  height: 40px;
+  width: 100%;
+  border: none;
+  background: #8dddc5;
+}
+
+.control.invalid input {
+  border-color: red;
+  background: #fbdada;
+}
+
+.actions {
+  text-align: center;
+}
+
+.form_input_login {
+  font-size: 0.8rem;
+  margin-top: 10px;
+  color: rgb(44, 33, 33);
+  width: 80%;
+  text-align: center;
+}
+
+.form_input_login a {
+  text-decoration: none;
+  color: #0b7ea1;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .control {
+    align-items: center;
+    flex-direction: row;
+  }
+}
